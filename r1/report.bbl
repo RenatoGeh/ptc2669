@@ -1,0 +1,126 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{anyt}{anyt}
+    \entry{inference-nphard}{article}{}
+      \name{author}{1}{}{%
+        {{hash=815a7274163c2c6a1a6438450568df25}{Cooper}{C\bibinitperiod}{Gregory\bibnamedelima F.}{G\bibinitperiod\bibinitdelim F\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{815a7274163c2c6a1a6438450568df25}
+      \strng{fullhash}{815a7274163c2c6a1a6438450568df25}
+      \field{labelalpha}{Coo88}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Computational Complexity of Probabilistic Inference Using Bayesian Belief Networks}
+      \field{year}{1988}
+    \endentry
+    \entry{bayes-net-darwiche}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9c3c93fa904c46230878dfcdd5bb2a70}{Darwiche}{D\bibinitperiod}{Adnan}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{9c3c93fa904c46230878dfcdd5bb2a70}
+      \strng{fullhash}{9c3c93fa904c46230878dfcdd5bb2a70}
+      \field{labelalpha}{Dar09}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st Edition}
+      \field{title}{Modeling and Reasoning with Bayesian Networks}
+      \field{year}{2009}
+    \endentry
+    \entry{gens-domingos}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4fc309fef4479f47de9b57555988b13c}{Gens}{G\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=926269a097c38456f5b32d7efb1d1a80}{Domingos}{D\bibinitperiod}{Pedro}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{19d242db70456313e59033460d239df5}
+      \strng{fullhash}{19d242db70456313e59033460d239df5}
+      \field{labelalpha}{GD13}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Machine Learning}
+      \field{title}{Learning the Structure of Sum-Product Networks}
+      \field{volume}{30}
+      \field{year}{2013}
+    \endentry
+    \entry{np-sat}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7dc6b6b94fd44f8a141c659dc1992f1c}{Kwisthout}{K\bibinitperiod}{J.\bibnamedelimi H.P.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=0f66b7e8e78b2034cd434ee7809b4d8e}{Bodlaender}{B\bibinitperiod}{Hans\bibnamedelima L.}{H\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=8b791eae60d8f657f1124b3d28113894}{Gaag}{G\bibinitperiod}{L.\bibnamedelimi C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{van\bibnamedelima der}{v\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}}%
+      }
+      \strng{namehash}{12f9fa44f858b28cea793294960dd2d0}
+      \strng{fullhash}{12f9fa44f858b28cea793294960dd2d0}
+      \field{labelalpha}{KBG10}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 2010 Conference on ECAI 2010: 19th European Conference in Artificial Intelligence}
+      \field{title}{The Necessity of Bounded Treewidth for Efficient Inference in Bayesian Networks}
+      \field{year}{2010}
+    \endentry
+    \entry{poon-domingos}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3e2b0bc20e35ee839c381d54ed997131}{Poon}{P\bibinitperiod}{Hoifung}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=926269a097c38456f5b32d7efb1d1a80}{Domingos}{D\bibinitperiod}{Pedro}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{07a1ea8459f4375c0ed4dd4be9d1b695}
+      \strng{fullhash}{07a1ea8459f4375c0ed4dd4be9d1b695}
+      \field{labelalpha}{PD11}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Uncertainty in Artificial Intelligence}
+      \field{title}{Sum-Product Networks: A New Deep Architecture}
+      \field{volume}{27}
+      \field{year}{2011}
+    \endentry
+    \entry{peharz-spn}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=ccf70c55dd0ddddfb671a98b2afd8ead}{Peharz}{P\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Graz University of Technology}%
+      }
+      \strng{namehash}{ccf70c55dd0ddddfb671a98b2afd8ead}
+      \strng{fullhash}{ccf70c55dd0ddddfb671a98b2afd8ead}
+      \field{labelalpha}{Peh15}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Foundations of Sum-Product Networks for Probabilistic Modeling}
+      \field{type}{phdthesis}
+      \field{year}{2015}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

@@ -1,0 +1,27 @@
+digraph {
+  graph [nodesep="0.5"];
+
+  root [label="+",shape=circle];
+  la [label=<&lambda;<sub>a</sub>>,shape=circle];
+  lna [label=<&lambda;<sub><o>a</o></sub>>,shape=circle];
+  m1, m2 [label=<&times;>,shape=circle];
+  s1, s2 [label="+",shape=circle];
+  lb [label=<&lambda;<sub>b</sub>>,shape=circle];
+  lnb [label=<&lambda;<sub><o>b</o></sub>>,shape=circle];
+
+  root -> m1 [label=<&theta;<sub>a</sub>>];
+  root -> m2 [label=<&theta;<sub><o>a</o></sub>>];
+  m1 -> la;
+  m1 -> s1;
+  m2 -> s2;
+  m2 -> lna;
+  s1 -> lb [label=<&theta;<sub>b|a</sub>>];
+  s1 -> lnb [label=<&theta;<sub><o>b</o>|a</sub>>];
+  s2 -> lb [label=<&theta;<sub>b|<o>a</o></sub>>];
+  s2 -> lnb [label=<&theta;<sub><o>b</o>|<o>a</o></sub>>];
+
+  rank=same; root;
+  rank=same; m1; m2;
+  rank=same; la; s1; s2; lna;
+  rank=same; lb; lnb;
+}

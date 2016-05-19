@@ -1,0 +1,42 @@
+[0] Config.pm:327> INFO - This is Biber 2.2
+[0] Config.pm:330> INFO - Logfile is 'report.blg'
+[29] biber:286> INFO - === Thu May 12, 2016, 12:46:20
+[29] Biber.pm:334> INFO - Reading 'report.bcf'
+[106] Biber.pm:677> INFO - Found 2 citekeys in bib section 0
+[120] Biber.pm:3054> INFO - Processing section 0
+[131] Biber.pm:3193> INFO - Looking for bibtex format file 'references.bib' for section 0
+[132] bibtex.pm:1072> INFO - Decoding LaTeX character macros into UTF-8
+[132] bibtex.pm:935> INFO - Found BibTeX data source 'references.bib'
+[135] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 9, warning: 1 characters of junk seen at toplevel
+[135] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 17, warning: 1 characters of junk seen at toplevel
+[135] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 25, warning: 1 characters of junk seen at toplevel
+[135] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 33, warning: 1 characters of junk seen at toplevel
+[135] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 40, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 46, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 53, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 61, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 68, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 74, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 80, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 87, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 94, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 100, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 108, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 115, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 122, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 130, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 138, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 145, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 153, warning: 1 characters of junk seen at toplevel
+[136] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 161, warning: 1 characters of junk seen at toplevel
+[137] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 169, warning: 1 characters of junk seen at toplevel
+[137] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 177, warning: 1 characters of junk seen at toplevel
+[137] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 185, warning: 1 characters of junk seen at toplevel
+[137] Utils.pm:147> WARN - BibTeX subsystem: /tmp/PmJzblva61/references.bib_11104.utf8, line 192, warning: 1 characters of junk seen at toplevel
+[161] UCollate.pm:66> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[161] UCollate.pm:66> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[162] Biber.pm:2931> INFO - Sorting list 'anyt' of type 'entry' with scheme 'anyt' and locale 'pt-BR'
+[162] Biber.pm:2935> INFO - No sort tailoring available for locale 'pt-BR'
+[164] bbl.pm:505> INFO - Writing 'report.bbl' with encoding 'UTF-8'
+[164] bbl.pm:596> INFO - Output to report.bbl
+[164] Biber.pm:107> INFO - WARNINGS: 26

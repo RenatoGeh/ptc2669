@@ -1,0 +1,16 @@
+digraph {
+  A [label="Inverno?\n(A)"];
+  B [label="Sprinkler?\n(B)"];
+  C [label="Chuva?\n(C)"];
+  D [label="Grama Molhada?\n(D)"];
+  E [label="Rua Escorregadia?\n(E)"];
+
+  A -> {B C}
+  B -> D
+  C -> {D E}
+
+  rank=same; A
+  rank=same; B; C;
+  rank=same; D;
+  rank=same; E;
+}
