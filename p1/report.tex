@@ -462,6 +462,42 @@
   \end{enumerate}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Shallow vs Deep SPNs}
+
+  \begin{figure}[h]
+    \centering{\includegraphics[scale=0.3]{imgs/shallow.png}}
+  \end{figure}
+
+  Complexidade: $\bigo(\exp(N))$
+\end{frame}
+
+\begin{frame}
+  \frametitle{Shallow vs Deep SPNs}
+
+  \begin{figure}[h]
+    \centering\includegraphics[scale=0.3]{imgs/deep.png}
+  \end{figure}
+
+  Complexidade: $\bigo(N)$
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section{Experimentos}
+
+\begin{frame}
+  \frametitle{Resultados com SPNs}
+
+  \begin{figure}[h]
+    \centering{\includegraphics[scale=0.2]{imgs/plane0.png}
+    \includegraphics[scale=0.2]{imgs/face0.png}\\
+    \includegraphics[scale=0.2]{imgs/stop0.png}
+    \includegraphics[scale=0.2]{imgs/dollar0.png}}
+    \caption{Compleção de imagem descrita em~\cite{poon-domingos}.}
+  \end{figure}
+\end{frame}
+
 %--------------------------------------------------------------------------------------------------
 
 \section{Conclusões}
@@ -476,7 +512,7 @@
     \item RNs de Convolução
     \item Arquitetura profunda
     \item Representa uma função
-    \item Mais camadas ocultas, melhor
+    \item Mais camadas ocultas, melhor~\cite{shallow-vs-deep}
   \end{enumerate}
 \end{frame}
 

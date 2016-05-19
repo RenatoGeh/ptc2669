@@ -2249,12 +2249,14 @@
     <bcf:citekey order="7">poon-domingos</bcf:citekey>
     <bcf:citekey order="8">gens-domingos</bcf:citekey>
     <bcf:citekey order="9">poon-domingos</bcf:citekey>
-    <bcf:citekey order="10">bayes-net-darwiche</bcf:citekey>
-    <bcf:citekey order="11">diff-approach-darwiche</bcf:citekey>
-    <bcf:citekey order="12">inference-nphard</bcf:citekey>
-    <bcf:citekey order="13">pgm-koller</bcf:citekey>
-    <bcf:citekey order="14">pearl-1988</bcf:citekey>
-    <bcf:citekey order="15">peharz-spn</bcf:citekey>
+    <bcf:citekey order="10">shallow-vs-deep</bcf:citekey>
+    <bcf:citekey order="11">poon-domingos</bcf:citekey>
+    <bcf:citekey order="12">bayes-net-darwiche</bcf:citekey>
+    <bcf:citekey order="13">diff-approach-darwiche</bcf:citekey>
+    <bcf:citekey order="14">inference-nphard</bcf:citekey>
+    <bcf:citekey order="15">pgm-koller</bcf:citekey>
+    <bcf:citekey order="16">pearl-1988</bcf:citekey>
+    <bcf:citekey order="17">peharz-spn</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt" type="entry" sortscheme="anyt">
   <bcf:sorting>

@@ -65,6 +65,22 @@
       \field{title}{Modeling and Reasoning with Bayesian Networks}
       \field{year}{2009}
     \endentry
+    \entry{shallow-vs-deep}{article}{}
+      \name{author}{2}{}{%
+        {{hash=902c914cb42f1c479d21169ad3009d66}{Delalleau}{D\bibinitperiod}{Olivier}{O\bibinitperiod}{}{}{}{}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{Bengio}{B\bibinitperiod}{Yoshua}{Y\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{108eba2224f7f7b9e1866f1e763e2ed4}
+      \strng{fullhash}{108eba2224f7f7b9e1866f1e763e2ed4}
+      \field{labelalpha}{DB11}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Neural Information Processing Systems 24 (NIPS 1011)}
+      \field{title}{Shallow vs. Deep Sum-Product Networks}
+      \field{year}{2011}
+    \endentry
     \entry{gens-domingos}{article}{}
       \name{author}{2}{}{%
         {{hash=4fc309fef4479f47de9b57555988b13c}{Gens}{G\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%
