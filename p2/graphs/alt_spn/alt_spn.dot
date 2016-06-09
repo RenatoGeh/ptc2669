@@ -1,0 +1,27 @@
+digraph {
+  graph [nodesep="1.0"];
+
+  root [label="+",shape=circle];
+  la [image="other.png",label="",shape=plaintext];
+  lna [image="gaussian.png",label="",shape=plaintext];
+  m1, m2 [label=<&times;>,shape=circle];
+  s1, s2 [label="+",shape=circle];
+  lb [image="gaussian.png",shape=plaintext,label=""];
+  lnb [image="other.png",shape=plaintext,label=""];
+
+  root -> m1;
+  root -> m2;
+  m1 -> la;
+  m1 -> s1;
+  m2 -> s2;
+  m2 -> lna;
+  s1 -> lb;
+  s1 -> lnb;
+  s2 -> lb;
+  s2 -> lnb;
+
+  rank=same; root;
+  rank=same; m1; m2;
+  rank=same; la; s1; s2; lna;
+  rank=same; lb; lnb;
+}

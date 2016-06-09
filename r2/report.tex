@@ -1,0 +1,297 @@
+\documentclass{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{thmtools,thm-restate}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage[backend=biber,url=true,doi=true,eprint=false,style=alphabetic]{biblatex}
+\usepackage{enumitem}
+\usepackage[justification=centering]{caption}
+\usepackage{indentfirst}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+\addbibresource{references.bib}
+
+\makeatletter
+\def\subsection{\@startsection{subsection}{3}%
+  \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+  {\normalfont\itshape}}
+\makeatother
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+
+\floatname{algorithm}{Algoritmo}
+\algrenewcommand\algorithmicrequire{\textbf{Input}}
+\algrenewcommand\algorithmicensure{\textbf{Output}}
+
+\captionsetup[table]{labelsep=space}
+
+\theoremstyle{plain}
+
+\newcounter{dummy-def}\numberwithin{dummy-def}{section}
+\newtheorem{definition}[dummy-def]{Definição}
+\newcounter{dummy-thm}\numberwithin{dummy-thm}{section}
+\newtheorem{theorem}[dummy-thm]{Teorema}
+\newcounter{dummy-prop}\numberwithin{dummy-prop}{section}
+\newtheorem{proposition}[dummy-prop]{Proposição}
+\newcounter{dummy-ex}\numberwithin{dummy-ex}{section}
+\newtheorem{exercise}[dummy-ex]{Exercício}
+\newcounter{dummy-eg}\numberwithin{dummy-eg}{section}
+\newtheorem{example}[dummy-eg]{Exemplo}
+
+\numberwithin{equation}{section}
+
+\newcommand{\set}[1]{\mathbf{#1}}
+\newcommand{\pr}{\mathbb{P}}
+\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\bigo}{\mathcal{O}}
+
+\setlength{\parskip}{1em}
+
+\lstset{frameround=fttt,
+  language=[5.3]Lua,
+	numbers=left,
+	breaklines=true,
+	keywordstyle=\bfseries,
+	basicstyle=\ttfamily,
+}
+
+\newcommand{\code}[1]{\lstinline[mathescape=true]{#1}}
+\newcommand{\mcode}[1]{\lstinline[mathescape]!#1!}
+
+
+\title{%
+  \noindent\rule{10cm}{0.8pt}\\
+  Estudo sobre Sum-Product Networks e Aprendizagem Profunda\\[1ex]
+  \scriptsize\mdseries
+  PTC2669 - Introdução a Inteligência Computacional\\
+  Instituto de Matemática e Estatística - USP\\%
+  \tiny~\\
+  Relatório 2\\%
+  \noindent\rule{10cm}{0.8pt}
+}
+\xdef\shorttitle{Sum-Product Networks e Deep Learning (Relatório 2) - Renato Geh}
+%\title[]{Estudo sobre Sum-Product Networks e Aprendizagem Profunda}
+\author[]{Renato Lui Geh\\NUSP\@: 8536030}
+
+\begin{document}
+
+\begin{abstract}
+  Sum-Product Networks (SPNs) são modelos probablísticos baseados em grafo que representam uma
+  distribuição de probabilidade por meio de uma função multilinear dos parâmetros de uma Rede
+  Bayesiana. Neste relatório, definiremos uma SPN recursivamente e mostraremos algumas propriedades
+  interessantes da rede. Em seguida mostraremos como executar aprendizagem estrutural de uma SPN
+  de forma que consigamos criar uma estrutura profunda a partir dos dados observados.
+  \vspace*{-3.5em}
+\end{abstract}
+
+\maketitle
+
+\section{Definições}
+
+No relatório anterior, definimos uma Sum-Product Network (SPN) como um DAG com nós soma, produto
+e indicadores. Vamos transcrever a definição abaixo.
+
+\begin{definition}\label{pd-def}
+  Uma SPN $S$ é um DAG com três tipos de nós: soma, produto e indicadores. Todo nó indicador é uma
+  folha. Todo nó soma tem pais produto, e todo nó produto tem pais soma. Toda aresta com destino a
+  um nó soma tem uma aresta com um peso associado. O valor de um nó soma $i$ é $\sum_{j\in Ch(i)}
+  w_{ij}v_j$ e o valor de um nó produto $i$ é $\prod_{j\in Ch(i)}v_j$, onde $Ch(i)$ é o conjunto
+  de filhos de $i$, $v_i$ é o valor do nó $i$ e $w_{ij}$ é o peso associado a aresta $i\to j$. Uma
+  SPN representa um \emph{network polynomial} de uma distribuição de probabilidade, e os
+  indicadores da função são as folhas da SPN\@. O valor de uma SPN é o valor do nó raíz.
+\end{definition}
+
+Considere um nó arbitrário $i$ de uma SPN, então a SPN representada por $i$ é uma SPN e é denotada
+por $S_i(\cdot)$.
+
+\begin{proposition}
+  Seja um nó arbitrário $i$ de uma SPN $S$, então $S_i$ é uma sub-SPN que tem nó raíz em $i$.
+\end{proposition}
+
+\begin{proof}
+  Considere o caso base em que $i$ é um nó indicador. Um nó indicador é uma distribuição de
+  probabilidade monovariável. Portanto $i$ é uma distribuição de probabilidade e pode ser
+  representada por uma SPN, que no caso possue apenas um nó.
+
+  Se $i$ é um nó soma, então o valor de $i$ é $v_i=\sum_{j\in Ch(i)} w_{ij}v_j$. A soma de várias
+  distribuições de probabilidade é uma distribuição de probabilidade. Portanto um nó soma é
+  representável por uma SPN\@.
+
+  Caso $i$ seja um nó produto, então o valor de $i$ é $v_i=\sum_{j\in Ch(i)} v_j$. A multiplicação
+  de distribuições de probabilidade é bem definida e é uma distribuição de probabilidade. Um nó
+  produto é uma SPN\@.
+\end{proof}
+
+O escopo de uma SPN $S$ é o conjunto união de todos os escopos de seus filhos. Denotaremos por
+$Sc(S_i)$ o escopo da SPN $S_i$.
+
+\section{Propriedades}
+
+Vamos abordar duas propriedades que são essenciais para definirmos uma SPN que computa de forma
+eficiente probabilidades marginais.
+
+\begin{definition}[Completude]
+  Uma SPN $S$ é completa se e somente se, para todo nó soma $i$, o escopo de $i$ é igual par-a-par
+  $Sc(S_i)=Sc(S_j)$ ao escopo de cada filho $j\in Ch(i)$.
+\end{definition}
+
+Em outras palavras, se tivermos duas distribuições de probabilidade $p_1(\set{X})$ e
+$p_2(\set{X})$, onde seus escopos são $\set{X}$, uma SPN $S$ que representa a soma de $p_1$ e $p_2$
+é completa sse $Sc(S)=Sc(p_1)=Sc(p_2)=\set{X}$.
+
+\begin{definition}[Consistência]
+  Uma SPN $S$ é consistente se e somente se, para todo nó produto $i$, nenhum filho de $i$ tem
+  valor diferente dos outros filhos.
+\end{definition}
+
+A propriedade de consistência garante que não haja contradição entre as variáveis indicadoras, ou
+seja, o valor de uma variável indicadora não pode ter dois valores simultâneos.
+
+\begin{definition}[Validade]
+  Uma SPN $S$ é válida se $S$ é consistente e completa.
+\end{definition}
+
+Note que a volta não é necessariamente verdade. De fato existem SPNs válidas que não são
+consistentes nem completas. No entanto, se uma SPN é completa e consistente, então todas as suas
+sub-SPNs são válidas. A validade de uma SPN garante que inferência seja computada em tempo
+eficiente e que seu resultado seja exato. Uma SPN que não seja válida computa uma probabilidade
+aproximada.
+
+\begin{definition}[Decomponibilidade]
+  Uma SPN $S$ é decomponível se e somente se, para cada par $c_1, c_2 \in Ch(i)$ para qualquer $i$
+  nó produto em $S$, $Sc(c_1)\cap Sc(c_2)=\emptyset$.
+\end{definition}
+
+Ou seja, todo filho de um nó produto tem escopos diferentes entre si. Uma SPN decomponível é uma
+SPN consistente, no entanto consistência não implica em decomponibilidade.
+
+\section{Uma definição alternativa}
+
+Em~\cite{gens-domingos}, foi proposto uma nova definição de SPNs. Esta definição, é mais forte que
+a definição dada em~\cite{poon-domingos} (cuja Definição~\ref{pd-def} se baseia), já que, como
+veremos, assume já que a distribuição possa ser representada por uma SPN completa e decomponível.
+Esta definição, de mais ``alto nível'', nos permite mudar o foco de nossos estudos,
+distanciando-nos da área de Representação e voltando nossos interesses ao tópico de aprendizado e
+inferência.
+
+\begin{definition}\label{gd-def}
+  Uma SPN tem uma definição recursiva. Definimos que uma SPN $S_i$ pode ser apenas:
+  \begin{enumerate}[label=(\roman*)]
+    \item\label{gd-ref-1} Uma distribuição monovariável $p(\set{X})$ ou;
+    \item\label{gd-ref-2} Um nó soma tal que $S_i=\sum_{j\in Ch(i)} w_{ij}v_j$ onde para cada filho
+      $j,k\in Ch(i)$, $Sc(S_j)=Sc(S_k)$ ou;
+    \item\label{gd-ref-3} Um nó produto tal que $S_i=\prod_{j\in Ch(i)} v_j$ onde para cada filho
+      $j,k\in Ch(i)$, $Sc(S_j)\cap Sc(S_k)=\emptyset$.
+  \end{enumerate}
+\end{definition}
+
+Note que em~\ref{gd-ref-2}, estamos assumindo completude em nós somas. Da mesma forma,
+regra~\ref{gd-ref-3} impõe decomponibilidade a nós produtos. Com relação a~\ref{gd-ref-1},
+restringimos apenas que $p(\set{X})$ seja tratável, ou seja, supomos que exista uma Rede Bayesiana
+ótima que compute $p(\set{X})$ de forma tratável (sub-exponencial). Por exemplo, uma distribuição
+gaussiana.
+
+\section{Classificação por Naive Bayes}
+
+Um modelo Naive Bayes é uma subclasse de Redes Bayesianas onde cada nó atributo tem um mesmo pai.
+Neste modelo, temos um nó classe que representa a classificação que desejamos encontrar, enquanto
+que cada nó atributo é uma característica que influencia no resultado da classificação. Como cada
+nó atributo possue uma única aresta com origem no nó classe, cada atributo é d-separado par-a-par.
+Esta suposição, apesar de restritiva, obtém resultados bons na prática. Esse relaxamento de
+dependência entre os atributos permite aprendizado rápido, simples e fácil.
+
+Pelo Teorema da Fatorização, a distribuição de probabilidade conjunta de um modelo Naive Bayes com
+$n$ atributos é computada como $\Pr(C,A_1,\ldots,A_n)=\Pr(C)\prod_{i=1}^n \Pr(A_i|C)$, onde $C$ é
+a variável classe e $\set{A}=\{A_1,\ldots,A_n\}$ é o conjunto de atributos. Para acharmos a
+explicação mais provável para uma certa instanciação $\set{a}=\{a_1,\ldots,a_n\}$, maximizamos a
+instanciação da classe $\argmax_c \Pr(C=c|A_1=a_1,\ldots,A_n=a_n)$. A probabilidade posteriori
+pode ser encontrada marginalizando sob $C$ e $\set{A}$: $\Pr(C=c|A_1=a_1,\ldots,A_n=a_n)=\Pr(C=c,
+A_1=a_1,\ldots,A_n=a_n)/\Pr(A_1=a_1,\ldots,A_n=a_n)$.
+
+Aprendizado em Naive Bayes pode ser feita por uma estimação da máxima verossimilhança (MLE). Para a
+variável classe, $\Pr(C=c)=\frac{N[C=c]}{N}$ onde $N[X=x]$ é a contagem de cada dado em que houve
+a ocorrência da variável $X$ instanciada a $x$ e $N$ é o número de contagens totais. Para cada
+atributo $i$, o MLE é dado por $\Pr(A_i=a_i|C=c)=\frac{N[A_i=a_i,C=c]}{N[C=c]}$.
+
+Quando há poucos dados, a variância das probabilidades pode tornar-se demasiadamente grande. Para
+suavizarmos os resultados, podemos aplicar um fator de suavização somando alguma constante aos
+termos de cada atributo.
+
+\section{Uma algoritmo de aprendizado estrutural}
+
+Nesta seção descreveremos simplificadamente um método de se aprender a estrutura de uma SPN a
+partir dos dados. Este método pode ser lido em detalhes em~\cite{gens-domingos}.
+
+Para este algoritmo, supomos que estamos construindo um classificador baseado em Naive Bayes, ou
+seja, as características para classificação são independentes entre si.
+
+\begin{algorithm}
+  \caption{LearnSPN}\label{learn-alg}
+  \begin{algorithmic}[1]
+    \Require~Conjunto $\set{X}$ de variáveis, conjunto $\set{I}$ de instâncias
+    \Ensure~Uma SPN resultante do aprendizado estrutural
+    \If{$|\set{X}|=1$}
+      \State~Retorna uma distribuição monovariável de $\set{X}$
+    \EndIf
+    \State~Tente dividir as variáveis $\set{X}$ em duas partições $\set{X}_1$ e $\set{X}_2$ onde
+      $\set{X}_1$ é (aproximadamente) independente de $\set{X}_2$
+    \If{dá para dividir}
+      \State~\textbf{return} $\prod_{i=1}^2$ LearnSPN($\set{X}_i$, $\set{I}$)
+    \Else
+      \State~Divida as instâncias $\set{I}$ em partições $\set{I}_1$ e $\set{I}_2$ tal que
+        $\set{I}_1$ e $\set{I}_2$ sejam o mais similares possíveis.
+      \State~\textbf{return} $\sum_{i=1}^2 \frac{|\set{I}_i|}{|\set{I}|}$ LearnSPN($\set{X}$,
+        $\set{I}_i$)
+    \EndIf
+  \end{algorithmic}
+\end{algorithm}
+
+No Algoritmo~\ref{learn-alg}, descrevemos como aprender a estrutura de uma SPN\@. O algoritmo
+procura buscar independências entre as variáveis dos dados. Se houver uma possível partição nas
+variáveis, ou seja, existe uma independência entre uma partição do conjunto de variáveis e o
+complemento dela, podemos então criar um nó produto cujos filhos são as sub-SPNs cujos escopos são
+as partições mas que possuem as mesmas instanciações. Note que obedecemos a propriedade de
+decomponibilidade, já que como cada atributo é independente par-a-par, teremos escopos diferentes
+para cada filho de um nó produto. Para acharmos independências, podemos recorrer a um teste
+estatístico sobre os dados. Queremos minimizar os erros do tipo II (falso negativo), já que
+preferimos minimizar casos em o teste diz que as partições são independentes quando não são.
+Para isso podemos controlar os erros do tipo I (falso positivo), onde o teste diz que não são
+independentes mas na realidade os eventos são de fato independentes.
+
+Se não foi possível criar um nó produto, então resta o caso em que podemos criar um nó soma. Os nós
+somas são divididos de tal forma que as instâncias sejam mais similares possíveis. Isso possibilita
+que a SPN não fique desbalanceada, e que as camadas de nós sejam o mais ``profundas'' possíveis.
+
+Quando chegamos ao caso base onde temos apenas uma variável em $\set{X}$, retornamos uma
+distribuição monovariável como nó folha.
+
+Para podermos visualizar mais graficamente, considere uma matriz de dados onde as linhas
+representam as instanciações e as colunas as variáveis. Acharmos duas partições $\set{X}_1$,
+$\set{X}_2$ é graficamente equivalente a dividir a matriz em duas submatrizes verticalmente.
+Podemos então computar, recursivamente, uma sub-SPN usando uma das sub-matrizes e a outra com o seu
+complementar. Analogamente, a divisão de instâncias semelhantes $\set{I}_1$, $\set{I}_2$ equivale
+a uma divisão horizontal da matriz. Quando temos uma submatriz de tamanho $1\times n$, temos uma
+distribuição monovariável, que no caso equivale a um vetor das valorações de uma única variável.
+
+%--------------------------------------------------------------------------------------------------
+
+\newpage
+\appendix
+
+\newpage
+
+\printbibliography[]
+
+\end{document}

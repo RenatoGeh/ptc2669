@@ -1,0 +1,15 @@
+digraph {
+  C [label="C",shape=circle];
+  A1 [label=<A<sub>1</sub>>,shape=circle];
+  A2 [label=<A<sub>2</sub>>,shape=circle];
+  ldots [label=". . .",shape=plaintext];
+  An [label=<A<sub>n</sub>>,shape=circle];
+
+  C->A1;
+  C->A2;
+  C->ldots [style=invis];
+  C->An;
+
+  rank=same; C;
+  rank=same; A1; A2; ldots; An;
+}
