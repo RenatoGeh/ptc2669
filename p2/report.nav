@@ -67,7 +67,7 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {12}{12}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {4}{Classifica\IeC {\c c}\IeC {\~a}o por Naive Bayes}{13}{Classifica\IeC {\c c}\IeC {\~a}o por Naive Bayes}{0}}
+\headcommand {\sectionentry {4}{Deep SPNs}{13}{Shallow vs. Deep SPNs}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {11}{12}}
 \defcounter {refsection}{0}\relax 
@@ -77,41 +77,61 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {13}{13}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {4}{0}{2}{14/14}{}{0}}
+\headcommand {\sectionentry {5}{Classifica\IeC {\c c}\IeC {\~a}o por Naive Bayes}{14}{Classifica\IeC {\c c}\IeC {\~a}o por Naive Bayes}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {13}{13}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {5}{0}{1}{14/14}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {14}{14}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {4}{0}{3}{15/15}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{15/15}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {15}{15}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {5}{Aprendizado estrutural de SPNs}{16}{Aprendizado estrutural de SPNs}{0}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {13}{15}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {13}{15}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {5}{0}{1}{16/16}{}{0}}
+\headcommand {\slideentry {5}{0}{3}{16/16}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {16}{16}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {6}{Refer\IeC {\^e}ncias}{17}{Refer\IeC {\^e}ncias e Bibliografia}{0}}
+\headcommand {\sectionentry {6}{Intui\IeC {\c c}\IeC {\~a}o}{17}{Uma vis\IeC {\~a}o mais intuitiva}{0}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {16}{16}}
+\headcommand {\beamer@sectionpages {14}{16}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {16}{16}}
+\headcommand {\beamer@subsectionpages {14}{16}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {7}{Refer\^encias}{17}{Refer\^encias}{0}}
+\headcommand {\slideentry {6}{0}{1}{17/18}{}{0}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {17}{16}}
+\headcommand {\beamer@framepages {17}{18}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {17}{16}}
+\headcommand {\sectionentry {7}{Aprendizado estrutural de SPNs}{19}{Aprendizado estrutural de SPNs}{0}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {7}{0}{0}{17/17}{}{0}}
+\headcommand {\beamer@sectionpages {17}{18}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@partpages {1}{17}}
-\headcommand {\beamer@subsectionpages {17}{17}}
-\headcommand {\beamer@sectionpages {17}{17}}
-\headcommand {\beamer@documentpages {17}}
-\headcommand {\def \inserttotalframenumber {17}}
+\headcommand {\beamer@subsectionpages {17}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {7}{0}{1}{19/19}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {19}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {8}{Refer\IeC {\^e}ncias}{20}{Refer\IeC {\^e}ncias e Bibliografia}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {19}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {19}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {9}{Refer\^encias}{20}{Refer\^encias}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {20}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {20}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {9}{0}{0}{20/20}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {20}{20}}
+\headcommand {\beamer@sectionpages {20}{20}}
+\headcommand {\beamer@documentpages {20}}
+\headcommand {\def \inserttotalframenumber {19}}

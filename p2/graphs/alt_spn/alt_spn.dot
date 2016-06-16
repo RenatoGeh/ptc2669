@@ -2,11 +2,11 @@ digraph {
   graph [nodesep="1.0"];
 
   root [label="+",shape=circle];
-  la [image="other.png",label="",shape=plaintext];
+  la [image="gaussian.png",label="",shape=plaintext];
   lna [image="gaussian.png",label="",shape=plaintext];
   m1, m2 [label=<&times;>,shape=circle];
   s1, s2 [label="+",shape=circle];
-  lb [image="gaussian.png",shape=plaintext,label=""];
+  lb [image="other.png",shape=plaintext,label=""];
   lnb [image="other.png",shape=plaintext,label=""];
 
   root -> m1;

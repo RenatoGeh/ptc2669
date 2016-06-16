@@ -206,6 +206,22 @@
 
 %--------------------------------------------------------------------------------------------------
 
+\section[Deep SPNs]{Shallow vs. Deep SPNs}
+
+\begin{frame}
+  \frametitle{Shallow vs. Deep SPNs}
+  Sejam $p$ uma distribuição suficientemente complexa, $S$ uma SPN que representa $p$ e
+  $m=|Sc(p)|$.
+  \begin{align*}
+    n\text{~camadas ocultas:~}&\text{Computa-se $S$ em $\bigo(\exp(m))$.}\\
+    n+1\text{~camadas ocultas:~}&\text{Computa-se $S$ em $\bigo(m^k), k<<<m$.}
+  \end{align*}
+  Prova disso em \textit{Shallow vs. Deep Sum-Product Networks}, Delalleau e
+  Bengio~\cite{shallow-vs-deep}.
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
 \section{Classificação por Naive Bayes}
 
 \begin{frame}
@@ -242,6 +258,27 @@
     \item[Variável classe] $\Pr(C=c)=\frac{N[C=c]}{N}$
     \item[$i$-ésimo atributo] $\Pr(A_i=a_i|C=c)=\frac{N[A_i=a_i,C=c]}{N[C=c]}$
   \end{description}
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------
+
+\section[Intuição]{Uma visão mais intuitiva}
+
+\begin{frame}
+  \frametitle{Uma visão mais intuitiva}
+  \begin{description}
+    \item[Nós internos:] variáveis latentes -- camadas ocultas:
+    \begin{description}
+      \item[$+$:] mistura de distribuições -- ``semelhança entre instâncias'';
+      \item[$\times$:] independência entre variáveis.
+    \end{description}
+    \item[Nós folhas:] Valoração/instanciação das variáveis.
+  \end{description}\p
+  \begin{figure}[h]
+    \centering\includegraphics[scale=0.25]{imgs/img_spn.png}
+    \caption{\textit{Learning the Structure of Sum-Product Networks Using Clustering on Variables},
+      Dennis e Ventura~\cite{clustering}}
+  \end{figure}
 \end{frame}
 
 %--------------------------------------------------------------------------------------------------
