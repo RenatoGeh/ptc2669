@@ -1,0 +1,8 @@
+graph {
+  node [label="", shape=circle];
+
+  R -- {A0 A1};
+  A0 -- {B0 B1 B2};
+  B1 -- C0;
+  B2 -- C1;
+}

@@ -1,0 +1,124 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{anyt}{anyt}
+    \entry{deep-archs-ai}{article}{}
+      \name{author}{1}{}{%
+        {{hash=40a8e4774982146adc2688546f54efb2}{Bengio}{B\bibinitperiod}{Yoshua}{Y\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{40a8e4774982146adc2688546f54efb2}
+      \strng{fullhash}{40a8e4774982146adc2688546f54efb2}
+      \field{labelalpha}{Ben09}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations and Trends in Machine Learning}
+      \field{title}{Learning Deep Architectures for AI}
+      \field{year}{2009}
+    \endentry
+    \entry{clustering}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9cd2db21a4bcc71a858a9bed294d43be}{Dennis}{D\bibinitperiod}{Aaron}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=b2da14aea97364c3ffe95f801a0f6a7d}{Ventura}{V\bibinitperiod}{Dan}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e7976c4a6ce958eae649366d358acd8b}
+      \strng{fullhash}{e7976c4a6ce958eae649366d358acd8b}
+      \field{labelalpha}{DV12}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Learning the Architecture of Sum-Product Networks Using Clustering on Variables}
+      \field{volume}{25}
+      \field{year}{2012}
+    \endentry
+    \entry{gens-domingos}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4fc309fef4479f47de9b57555988b13c}{Gens}{G\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=926269a097c38456f5b32d7efb1d1a80}{Domingos}{D\bibinitperiod}{Pedro}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{19d242db70456313e59033460d239df5}
+      \strng{fullhash}{19d242db70456313e59033460d239df5}
+      \field{labelalpha}{GD13}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Machine Learning}
+      \field{title}{Learning the Structure of Sum-Product Networks}
+      \field{volume}{30}
+      \field{year}{2013}
+    \endentry
+    \entry{dbns}{article}{}
+      \name{author}{2}{}{%
+        {{hash=881b7655f3886f90a9400902a521acdb}{Hinton}{H\bibinitperiod}{Geoffrey\bibnamedelima E.}{G\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{hash=fab5d280b4ad946c97c9989ba8e2de38}{Salakhutdinov}{S\bibinitperiod}{Ruslan\bibnamedelima R.}{R\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{f7adc3650679206da03ff5acc897a61f}
+      \strng{fullhash}{f7adc3650679206da03ff5acc897a61f}
+      \field{labelalpha}{HS06}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science Magazine}
+      \field{title}{Reducing the Dimensionality of Data with Neural Networks}
+      \field{year}{2006}
+    \endentry
+    \entry{cdbns}{article}{}
+      \name{author}{4}{}{%
+        {{hash=d09ea8631bf43468107b5ef02c5195aa}{Lee}{L\bibinitperiod}{Honglak}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=7bfa5101481b4cfcddf46d2915b6ad49}{Grosse}{G\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=78c9623387b77ea4d747a738741a50eb}{Ranganath}{R\bibinitperiod}{Rajes}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=66b1ab24d7f42d468388f6200a7b5967}{Ng}{N\bibinitperiod}{Andrew\bibnamedelima Y.}{A\bibinitperiod\bibinitdelim Y\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{665e9abba76af302f3e8559f019cf222}
+      \strng{fullhash}{8eca624869dd5961d4a8e16dbf57beb9}
+      \field{labelalpha}{Lee+09}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Machine Learning (ICML 2009)}
+      \field{title}{Convolutional Deep Belief Networks for Scalable Unsupervised Learning of Hierarchical Representarions}
+      \field{year}{2009}
+    \endentry
+    \entry{dbms}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fab5d280b4ad946c97c9989ba8e2de38}{Salakhutdinov}{S\bibinitperiod}{Ruslan\bibnamedelima R.}{R\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=881b7655f3886f90a9400902a521acdb}{Hinton}{H\bibinitperiod}{Geoffrey\bibnamedelima E.}{G\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{1ca5f684771ca1ee37b159c24b2bbaf2}
+      \strng{fullhash}{1ca5f684771ca1ee37b159c24b2bbaf2}
+      \field{labelalpha}{SH10}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Artificial Intelligence and Statistics (AISTATS)}
+      \field{title}{Deep Boltzmann Machines}
+      \field{year}{2010}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

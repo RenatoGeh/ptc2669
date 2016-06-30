@@ -1,0 +1,222 @@
+\documentclass{amsart}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{thmtools,thm-restate}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage[backend=biber,url=true,doi=true,eprint=false,style=alphabetic]{biblatex}
+\usepackage{enumitem}
+\usepackage[justification=centering]{caption}
+\usepackage{indentfirst}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+\addbibresource{references.bib}
+
+\makeatletter
+\def\subsection{\@startsection{subsection}{3}%
+  \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+  {\normalfont\itshape}}
+\makeatother
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+
+\floatname{algorithm}{Algoritmo}
+\algrenewcommand\algorithmicrequire{\textbf{Input}}
+\algrenewcommand\algorithmicensure{\textbf{Output}}
+
+\captionsetup[table]{labelsep=space}
+
+\theoremstyle{plain}
+
+\newcounter{dummy-def}\numberwithin{dummy-def}{section}
+\newtheorem{definition}[dummy-def]{Definição}
+\newcounter{dummy-thm}\numberwithin{dummy-thm}{section}
+\newtheorem{theorem}[dummy-thm]{Teorema}
+\newcounter{dummy-prop}\numberwithin{dummy-prop}{section}
+\newtheorem{proposition}[dummy-prop]{Proposição}
+\newcounter{dummy-ex}\numberwithin{dummy-ex}{section}
+\newtheorem{exercise}[dummy-ex]{Exercício}
+\newcounter{dummy-eg}\numberwithin{dummy-eg}{section}
+\newtheorem{example}[dummy-eg]{Exemplo}
+
+\numberwithin{equation}{section}
+
+\newcommand{\set}[1]{\mathbf{#1}}
+\newcommand{\pr}{\mathbb{P}}
+\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\bigo}{\mathcal{O}}
+
+\setlength{\parskip}{1em}
+
+\lstset{frameround=fttt,
+  language=[5.3]Lua,
+	numbers=left,
+	breaklines=true,
+	keywordstyle=\bfseries,
+	basicstyle=\ttfamily,
+}
+
+\newcommand{\code}[1]{\lstinline[mathescape=true]{#1}}
+\newcommand{\mcode}[1]{\lstinline[mathescape]!#1!}
+
+
+\title{%
+  \noindent\rule{10cm}{0.8pt}\\
+  Estudo sobre Sum-Product Networks e Aprendizagem Profunda\\[1ex]
+  \scriptsize\mdseries
+  PTC2669 - Introdução a Inteligência Computacional\\
+  Instituto de Matemática e Estatística - USP\\%
+  \tiny~\\
+  Relatório 2\\%
+  \noindent\rule{10cm}{0.8pt}
+}
+\xdef\shorttitle{Sum-Product Networks e Deep Learning (Relatório 2) - Renato Geh}
+%\title[]{Estudo sobre Sum-Product Networks e Aprendizagem Profunda}
+\author[]{Renato Lui Geh\\NUSP\@: 8536030}
+
+\begin{document}
+
+\begin{abstract}
+  Modelos probabilísticos baseados em grafo representam uma distribuição de probabilidade de forma
+  compacta. Apesar de bastante expressivos, os modelos clássicos que conhecemos ou tem inferência
+  intratável e aprendizado difícil, como Redes Bayesianas e Redes de Markov, ou são muito restritas
+  com relação a sua representatividade. Sum-Product Networks (SPNs) é uma classe de modelos que
+  representa uma distribuição de probabilidade tratável e tem inferência exata e tratável. Além
+  disso, SPNs se mostram bastante interessantes devido a sua arquitetura profunda. Quanto mais
+  camadas forem adicionadas não somente aumentamos a representatividade do modelo como também
+  mantemos a tractabilidade da inferência.
+  \vspace*{-3.5em}
+\end{abstract}
+
+\maketitle
+
+\section{Motivação}
+
+Modelos probabilísticos clássicos baseados em grafos, tais como Redes Bayesianas e Redes de Markov,
+conseguem representar uma grande variedade de distribuições de probabilidade. No entanto, tais
+modelos tem sua performance reduzida quando a representação requer uma largura de árvore muito
+grande. Além disso, devido a sua intractabilidade quanto a inferência exata, muitas vezes devemos
+utilizar algoritmos aproximados para computar inferência. Como aprendizado usa inferência como
+subrotina, a verossimilhança durante o aprendizado pode acabar sofrendo devido às técnicas de
+aproximação, o que potencialmente não ocorreria se tivéssemos a possibilidade de computar
+inferência exata em tempo subexponencial.
+
+Recentemente houve um grande foco em arquiteturas profundas, onde o modelo apresenta várias camadas
+ocultas onde cada variável nesta camada age como uma variável latente, o que pode amenizar o
+problema da largura de árvore e ainda assim manter uma alta representabilidade~\cite{deep-archs-ai}
+No entanto, modelar tais arquiteturas é uma tarefa difícil. Além do mais, tanto inferência quanto
+aprendizado tornam-se ainda mais difíceis.
+
+Redes Soma-Produto (RSPs), conhecidas como Sum-Product Networks (SPNs) na literatura, são modelos
+probabilísticos baseados em grafos onde o problema da largura de árvore é solucionado por meio de
+variáveis latentes e camadas ocultas. SPNs são interessantes pois apesar de serem uma arquitetura
+profunda, ainda assim mantém inferência exata e tratável. Além disso, são modelos mais gerais que
+os anteriormente propostos para distribuições tratáveis.
+
+\section{Sum-Product Networks}
+
+Uma SPN é um DAG em que todo subgrafo enraizado em um vértice arbitrário é uma SPN. Iremos definir
+SPNs abaixo.
+
+\begin{definition}\label{gd-def}
+  Uma SPN tem uma definição recursiva. Definimos que uma SPN $S_i$ pode ser apenas:
+  \begin{enumerate}[label=(\roman*)]
+    \item\label{gd-ref-1} Uma distribuição monovariável $p(\set{X})$ ou;
+    \item\label{gd-ref-2} Um nó soma tal que $S_i=\sum_{j\in Ch(i)} w_{ij}v_j$ onde para cada filho
+      $j,k\in Ch(i)$, $Sc(S_j)=Sc(S_k)$ ou;
+    \item\label{gd-ref-3} Um nó produto tal que $S_i=\prod_{j\in Ch(i)} v_j$ onde para cada filho
+      $j,k\in Ch(i)$, $Sc(S_j)\cap Sc(S_k)=\emptyset$.
+  \end{enumerate}
+\end{definition}
+
+Intuitivamente, SPNs podem ser vistas como redes em que capturamos semelhanças entre instâncias e
+independência entre variáveis. Nós somas representam semelhança entre os dados, já que cada filho
+de um nó soma é apenas uma mistura de distribuições com mesmo escopo. Já nós produtos podem ser
+vistos como uma relação de independência entre as variáveis de cada escopo de cada filho do nó.
+Note que cada filho de um nó produto é independente de outro filho do mesmo nó pai, já que seus
+escopos são disjuntos. Nós folhas são definidos como distribuições monovariáveis, no entanto é
+possível estender a definição para distribuições multivariáveis.
+
+Inferência é natural à estrutura de uma SPN. Computar a probabilidade de evidência de uma SPN
+resume-se a computar o valor de cada nó em formato \textit{top-down}, com a configuração das folhas
+da SPN de reguladas para que sejam consistentes com a evidência. Computar a probabilidade marginal
+é semelhante, porém determinamos que folhas cujos escopos foram eliminados tenham valores 1. Para
+computarmos o MAP de uma SPN ao invés de termos as folhas com valores 1 quando não existe
+evidência determinamos como a valoração mais provável da distribuição como valor da folha, ou seja
+uma valoração tal que sua probabilidade seja maximal na distribuição.
+
+\section{Aprendizado}
+
+Como nós somas são relações de semelhança entre as instâncias dos dados, podemos tomar cada filho
+de um nó soma como um \textit{cluster} de semelhança. Podemos aplicar \textit{k-means clustering}
+para separarmos $k$ clusters. Cada um desses $k$ clusters será um filho de um nó soma e terão mesmo
+escopo.
+
+Nós produtos representam independência entre variáveis. Para separarmos as variáveis em conjuntos
+onde toda variável em um conjunto é independente de uma variável em outro conjunto podemos criar um
+grafo de independência:
+
+\begin{definition}
+  Um grafo de independência é um grafo $G=(X,E)$ com variáveis $X$ como vértices e arestas
+  $E=\{e_{ij} : X_i\text{---}X_j \iff X \not\perp Y\}$.
+\end{definition}
+
+Para acharmos as independências par-a-par podemos utilizar o teste de independência por
+Chi-Quadrado ou por Entropia.
+
+\begin{proposition}
+  Seja um grafo de independência $G=(X,E)$, os k-subgrafos $H_0,\ldots,H_k \subseteq G$
+  desconexos tem escopos independentes par-a-par.
+\end{proposition}
+
+Desta forma, podemos identificar os subgrafos desconexos e atribuir cada um desses conjuntos
+disjuntos a um filho do nó produto.
+
+Como nós folhas são apenas distribuições monovariáveis, podemos aprender nós folhas por meio da
+técnica tradicional de MLE, que resume-se a adquirir as contagens e normalizarmos para obtermos
+as frequências de cada possíveis valorações da variável.
+
+\begin{algorithm}[H]
+  \caption{LearnSPN~\cite{gens-domingos}}\label{learn-alg}
+  \begin{algorithmic}[1]
+    \Require~Conjunto $\set{X}$ de variáveis, conjunto $\set{I}$ de instâncias
+    \Ensure~Uma SPN resultante do aprendizado estrutural
+    \If{$|\set{X}|=1$}
+      \State~Retorna uma distribuição monovariável de $\set{X}$
+    \EndIf
+    \State~Tente dividir as variáveis $\set{X}$ em $q$ partições $\set{X}_1,\ldots,\set{X}_q$
+      onde $\set{X}_i$ é (aproximadamente) independente de todo $\set{X}_j$ para $i\neq j$.
+    \If{dá para dividir}
+      \State~\textbf{return} $\prod_{i=1}^q$ LearnSPN($\set{X}_i$, $\set{I}$)
+    \Else
+      \State~Divida as instâncias $\set{I}$ em partições $\set{I}_1,\ldots,\set{I}_k$ tal que
+        $\set{I}_i$ seja uma coleção de instâncias mais similares possíveis entre si.
+      \State~\textbf{return} $\sum_{i=1}^k \frac{|\set{I}_i|}{|\set{I}|}$ LearnSPN($\set{X}$,
+        $\set{I}_i$)
+    \EndIf
+  \end{algorithmic}
+\end{algorithm}
+
+\maketitle
+
+%--------------------------------------------------------------------------------------------------
+
+\newpage
+\appendix
+
+\newpage
+
+\printbibliography[]
+
+\end{document}

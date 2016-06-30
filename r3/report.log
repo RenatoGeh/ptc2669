@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.8)  22 JUN 2016 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.8)  29 JUN 2016 22:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1010,85 +1010,64 @@ Package biblatex Info: Reference section=0 on input line 88.
 Package biblatex Info: Reference segment=0 on input line 88.
 \c@lstlisting=\count334
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 101.
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 106.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 120.
+(babel)             in language  on input line 104.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 127.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 127.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 127.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 132.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 180.
+(babel)             in language  on input line 159.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 188.
+(babel)             in language  on input line 173.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 188.
+(babel)             in language  on input line 173.
  [2]
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
+input line 179.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 191.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 206.
+(babel)             in language  on input line 215.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 219.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 215.
  [3]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 245.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 254.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 289.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 289.
- [4]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 303.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 303.
- [5]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 308.
-
-Overfull \hbox (19.08339pt too wide) in paragraph at lines 308--308
-[]\OT1/cmr/m/n/10 Olivier De-lal-leau e Yoshua Ben-gio. ``Shal-low vs. Deep Sum
--Product Networks''.
- []
+(babel)             in language  on input line 220.
 
 
 Package caption Warning: Unused \captionsetup[table] on input line 37.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 310.
+(babel)             in language  on input line 222.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 310.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+(babel)             in language  on input line 222.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 222.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 222.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 78109D09FA3FD57887FA6BF84285D79D;432.
+(rerunfilecheck)             Checksum: 501761FF388DCE14ACAE8116888A15C4;210.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 222.
  ) 
 Here is how much of TeX's memory you used:
- 16532 strings out of 493054
- 261535 string characters out of 6140587
- 720811 words of memory out of 5000000
- 19622 multiletter control sequences out of 15000+600000
- 10314 words of font info for 40 fonts, out of 8000000 for 9000
+ 16512 strings out of 493054
+ 261187 string characters out of 6140587
+ 717782 words of memory out of 5000000
+ 19615 multiletter control sequences out of 15000+600000
+ 11012 words of font info for 42 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 45i,6n,67p,933b,1555s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,5n,67p,933b,1672s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -1100,12 +1079,11 @@ ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1
 /cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
 sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msam10.pfb>
-Output written on report.pdf (6 pages, 197527 bytes).
+e1/public/amsfonts/cm/cmti10.pfb>
+Output written on report.pdf (4 pages, 178843 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 117 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,21 +19,20 @@
 
 \refsection{0}
   \sortlist{anyt}{anyt}
-    \entry{shallow-vs-deep}{article}{}
-      \name{author}{2}{}{%
-        {{hash=902c914cb42f1c479d21169ad3009d66}{Delalleau}{D\bibinitperiod}{Olivier}{O\bibinitperiod}{}{}{}{}}%
+    \entry{deep-archs-ai}{article}{}
+      \name{author}{1}{}{%
         {{hash=40a8e4774982146adc2688546f54efb2}{Bengio}{B\bibinitperiod}{Yoshua}{Y\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{108eba2224f7f7b9e1866f1e763e2ed4}
-      \strng{fullhash}{108eba2224f7f7b9e1866f1e763e2ed4}
-      \field{labelalpha}{DB11}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \strng{namehash}{40a8e4774982146adc2688546f54efb2}
+      \strng{fullhash}{40a8e4774982146adc2688546f54efb2}
+      \field{labelalpha}{Ben09}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Advances in Neural Information Processing Systems 24 (NIPS 1011)}
-      \field{title}{Shallow vs. Deep Sum-Product Networks}
-      \field{year}{2011}
+      \field{journaltitle}{Foundations and Trends in Machine Learning}
+      \field{title}{Learning Deep Architectures for AI}
+      \field{year}{2009}
     \endentry
     \entry{gens-domingos}{article}{}
       \name{author}{2}{}{%
@@ -51,23 +50,6 @@
       \field{title}{Learning the Structure of Sum-Product Networks}
       \field{volume}{30}
       \field{year}{2013}
-    \endentry
-    \entry{poon-domingos}{article}{}
-      \name{author}{2}{}{%
-        {{hash=3e2b0bc20e35ee839c381d54ed997131}{Poon}{P\bibinitperiod}{Hoifung}{H\bibinitperiod}{}{}{}{}}%
-        {{hash=926269a097c38456f5b32d7efb1d1a80}{Domingos}{D\bibinitperiod}{Pedro}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{07a1ea8459f4375c0ed4dd4be9d1b695}
-      \strng{fullhash}{07a1ea8459f4375c0ed4dd4be9d1b695}
-      \field{labelalpha}{PD11}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Uncertainty in Artificial Intelligence}
-      \field{title}{Sum-Product Networks: A New Deep Architecture}
-      \field{volume}{27}
-      \field{year}{2011}
     \endentry
   \endsortlist
 \endrefsection

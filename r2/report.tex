@@ -203,6 +203,19 @@ restringimos apenas que $p(\set{X})$ seja tratável, ou seja, supomos que exista
 ótima que compute $p(\set{X})$ de forma tratável (sub-exponencial). Por exemplo, uma distribuição
 gaussiana.
 
+\section{SPNs profundas e rasas}
+
+Em~\cite{shallow-vs-deep} Delalleau e Bengio mostraram que SPNs profundas possuem uma maior
+representabilidade do que redes rasas. Por representabilidade queremos dizer que existe uma
+SPN que possa, de forma tratável, representar a distribuição desejada. Mais formalmente, considere
+uma SPN $S$, uma distribuição suficientemente complexa $p$ que é representada por $S$ e $m$ a
+dimensão do escopo de $p$. Definiremos uma rede rasa como uma SPN com três camadas: uma camada de
+entrada, uma camada oculta e uma camada de saída. A camada de entrada é composta de variáveis
+indicadoras que representam uma distribuição monovariável. A camada de saída é o nó raíz que
+representa o valor desejado. A camada oculta contém nós somas produtos. Suponha que $p$ requer um
+número exponencialmente grande de arestas para se representar por $S$. Então, existe uma SPN com
+$n>3$ camadas ocultas que representa a mesma distribuição $p$ com um número polinomial de arestas.
+
 \section{Classificação por Naive Bayes}
 
 Um modelo Naive Bayes é uma subclasse de Redes Bayesianas onde cada nó atributo tem um mesmo pai.
@@ -229,7 +242,7 @@ Quando há poucos dados, a variância das probabilidades pode tornar-se demasiad
 suavizarmos os resultados, podemos aplicar um fator de suavização somando alguma constante aos
 termos de cada atributo.
 
-\section{Uma algoritmo de aprendizado estrutural}
+\section{Um algoritmo de aprendizado estrutural}
 
 Nesta seção descreveremos simplificadamente um método de se aprender a estrutura de uma SPN a
 partir dos dados. Este método pode ser lido em detalhes em~\cite{gens-domingos}.

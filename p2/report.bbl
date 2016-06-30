@@ -35,6 +35,23 @@
       \field{title}{Shallow vs. Deep Sum-Product Networks}
       \field{year}{2011}
     \endentry
+    \entry{clustering}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9cd2db21a4bcc71a858a9bed294d43be}{Dennis}{D\bibinitperiod}{Aaron}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=b2da14aea97364c3ffe95f801a0f6a7d}{Ventura}{V\bibinitperiod}{Dan}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e7976c4a6ce958eae649366d358acd8b}
+      \strng{fullhash}{e7976c4a6ce958eae649366d358acd8b}
+      \field{labelalpha}{DV12}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Learning the Architecture of Sum-Product Networks Using Clustering on Variables}
+      \field{volume}{25}
+      \field{year}{2012}
+    \endentry
     \entry{gens-domingos}{article}{}
       \name{author}{2}{}{%
         {{hash=4fc309fef4479f47de9b57555988b13c}{Gens}{G\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%

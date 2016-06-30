@@ -2240,10 +2240,13 @@
     <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">gens-domingos</bcf:citekey>
-    <bcf:citekey order="2">poon-domingos</bcf:citekey>
+    <bcf:citekey order="1">poon-domingos</bcf:citekey>
+    <bcf:citekey order="2">gens-domingos</bcf:citekey>
     <bcf:citekey order="3">shallow-vs-deep</bcf:citekey>
-    <bcf:citekey order="4">gens-domingos</bcf:citekey>
+    <bcf:citekey order="4">clustering</bcf:citekey>
+    <bcf:citekey order="5">clustering</bcf:citekey>
+    <bcf:citekey order="6">gens-domingos</bcf:citekey>
+    <bcf:citekey order="7">gens-domingos</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt" type="entry" sortscheme="anyt">
   <bcf:sorting>

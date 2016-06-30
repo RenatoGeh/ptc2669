@@ -1,0 +1,21 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\beamer@endinputifotherversion {3.36pt}
+\defcounter {refsection}{0}\relax 
+\select@language {brazilian}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {1}{Defini\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{Propriedades}{7}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Uma defini\IeC {\c c}\IeC {\~a}o alternativa}{11}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Shallow vs. Deep SPNs}{13}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Classifica\IeC {\c c}\IeC {\~a}o por Naive Bayes}{14}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Uma vis\IeC {\~a}o mais intuitiva}{17}{0}{6}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {7}{Aprendizado estrutural de SPNs}{19}{0}{7}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {8}{Refer\IeC {\^e}ncias e Bibliografia}{20}{0}{8}
